@@ -5,14 +5,13 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
-
 import { useSelector, useDispatch } from 'react-redux';
 
 function ProductList() {
   const dispatch = useDispatch();
 
-  const { currentCategory, products } = useSelector(state => state); // Use useSelector to extract currentCategory and products
-
+  const { currentCategory, products } = useSelector(state => state);
+  
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
   useEffect(() => {
